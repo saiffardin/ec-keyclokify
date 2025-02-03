@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+.kcLoginClass {
+  background: white;
+  padding-top: 0;
+  /* height: 100vh; */
+  box-shadow: none;
+  margin: 0 auto;
+  box-shadow: none;
+  max-width: 500px;
+  border-top: none;
+  font-family: "Inter";
+  color: black;
+}
+
+.kcFormCardClass {
+  box-shadow: none;
+  border-top: none;
+  border-color: transparent;
+}

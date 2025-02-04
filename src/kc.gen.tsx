@@ -9,9 +9,9 @@
 
 import { lazy, Suspense, type ReactNode } from "react";
 
-export type ThemeName = "keycloakify-starter";
+export type ThemeName = "ec-keycloakify";
 
-export const themeNames: ThemeName[] = ["keycloakify-starter"];
+export const themeNames: ThemeName[] = ["ec-keycloakify"];
 
 export type KcEnvName = never;
 
@@ -27,23 +27,23 @@ export const kcEnvDefaults: Record<KcEnvName, string> = {};
 export type KcContext = import("./login/KcContext").KcContext;
 
 declare global {
-    interface Window {
-        kcContext?: KcContext;
-    }
+  interface Window {
+    kcContext?: KcContext;
+  }
 }
 
 export const KcLoginPage = lazy(() => import("./login/KcPage"));
 
 export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
-    const { kcContext, fallback } = props;
-    return (
-        <Suspense fallback={fallback}>
-            {(() => {
-                switch (kcContext.themeType) {
-                    case "login":
-                        return <KcLoginPage kcContext={kcContext} />;
-                }
-            })()}
-        </Suspense>
-    );
+  const { kcContext, fallback } = props;
+  return (
+    <Suspense fallback={fallback}>
+      {(() => {
+        switch (kcContext.themeType) {
+          case "login":
+            return <KcLoginPage kcContext={kcContext} />;
+        }
+      })()}
+    </Suspense>
+  );
 }

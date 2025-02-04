@@ -1,0 +1,82 @@
+.login-parent {
+  display: grid;
+
+  /* Two columns with equal width */
+  grid-template-columns: 1fr 1fr;
+
+  /* Adjust the gap between the columns */
+  /* grid-gap: 10px; */
+}
+
+.login-static-content {
+  background-color: #f9fafb;
+  /* padding: 10px; */
+  font-size: 16px;
+  /* border: 5px solid black; */
+
+  /* Make sure the items take up 100% of the column width */
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 40px;
+
+  background-image: url("../assets/ec_bg.png");
+  background-size: cover;
+
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.login-static-content ul {
+  max-width: 80%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  /* background: url("./assets/dudok-left-bg.png") no-repeat center center; */
+}
+
+.login-form-wrapper {
+  /* Make sure the items take up 100% of the column width */
+  width: 100%;
+  background-color: white;
+}
+
+.login-form-wrapper input {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.kcButtonPrimaryClass {
+  background-color: #0088ce;
+  background-image: linear-gradient(to bottom, #39a5dc 0, #0088ce 100%);
+  background-repeat: repeat-x;
+  border-color: #00659c;
+  color: #fff;
+}
+
+/* ================================================ */
+
+/* For responsiveness, you can use media queries */
+@media (max-width: 768px) {
+  .login-parent {
+    /* Switch to a single column layout on smaller screens */
+    grid-template-columns: 1fr;
+  }
+
+  .login-static-content {
+    order: 1;
+  }
+
+  .login-form-wrapper {
+    order: -1;
+  }
+
+  .login-static-content ul {
+    max-width: 100%;
+  }
+}
